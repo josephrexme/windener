@@ -37,11 +37,35 @@
               </div>
             </div>
           </div>
-          {{ template "_internal/disqus.html" . }}
+          <!-- Comments Section -->
+          <div class="comments">
+            <div class="comments__triggre js-toggleComments">
+              <span class="comments__trigger__plus"></span>
+              <p>Toggle Comments</p>
+            </div>
+            <div id="disqus_thread" style="display: none"></div>
+          </div>
+          <!-- end comments -->
         </article>
       </main>
     </section>
   </div>
+  <footer class="post__footer">
+    <div class="wrap row">
+      <div class="col">
+        {{ if .Prev }}
+          <h5>Newer Post</h5>
+          <a href="{{.Prev.Permalink}}">{{.Prev.Title}}</a>
+        {{ end }}
+      </div>
+      <div class="col u-txtright">
+        {{ if .Next }}
+          <h5>Older Post</h5>
+          <a href="{{.Next.Permalink}}">{{.Next.Title}}</a>
+        {{ end }}
+      </div>
+    </div>
+  </footer>
 </div>
 
 {{ end }}
