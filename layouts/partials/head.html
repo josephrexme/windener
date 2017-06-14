@@ -10,10 +10,6 @@
   <title>{{ .Title }}{{ if .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
   <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}">
   <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
-  <link rel="stylesheet" href="{{ "css/highlight.css" | absURL }}">
-  {{ range .Site.Params.customCSS }}
-  <link rel="stylesheet" href="{{ . | absURL }}">
-  {{ end }}
   {{ if .Site.Params.enableRSS }}
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
   {{ end }}
