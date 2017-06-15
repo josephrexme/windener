@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="wrap">
+    <section class="container">
+      <main class="list__item">
+        <ul class="list__item__content">
+          {{ range where .Paginator.Pages "Section" "ne" "" }}
+              <li><a href='{{ .URL }}'>{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      </main>
+    </section>
+  </div>
+{{ end }}

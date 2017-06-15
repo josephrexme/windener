@@ -8,7 +8,12 @@
     {{ .Hugo.Generator }}
   {{ end }}
   <title>{{ .Title }}{{ if .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
-  <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}">
+  {{ if .Site.Params.favicon }}
+  <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}">
+  {{ else }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
+  {{ end }}
+  <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}">
   <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
   {{ if .Site.Params.enableRSS }}
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
