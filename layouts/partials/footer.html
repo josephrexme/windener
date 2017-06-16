@@ -12,11 +12,5 @@
   {{ if .Site.Social }}
     {{ partial "social.html" . }}
   {{ end }}
-  <p class="small">
-    {{ with .Site.Params.copyright }}
-      {{ . | markdownify }}
-    {{ else }}
-      © {{ now.Format "2006" }} {{ .Site.Params.name }}
-    {{ end }}
-  </p>
+  <p>© <span class="thisYear"></span> Joseph Rex. Powered by <a href="https://gohugo.io">Hugo</a> and hosted on <a href="https://www.netlify.com">Netlify</a></p>
 </footer>

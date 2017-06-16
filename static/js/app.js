@@ -100,6 +100,9 @@ Barba.Dispatcher.on('transitionCompleted', function() {
       disqusComments();
     });
   }
+  // Date for copyright
+  var presentDate = new Date(), showDate = document.querySelector('.thisYear');
+  showDate.innerHTML = presentDate.getFullYear();
 });
 
 

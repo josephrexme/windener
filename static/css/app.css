@@ -1668,6 +1668,8 @@ pre {
   .footer :focus {
     outline-color: #cabcc1;
     outline-width: 3px; }
+  .footer a{
+    color: rgba(255, 255, 255, 0.7); }
   .footer input, .footer button {
     margin-bottom: .5rem; }
     .footer input:focus, .footer button:focus {

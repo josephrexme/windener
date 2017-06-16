@@ -11,6 +11,9 @@
     outline-color: #cabcc1;
     outline-width: 3px;
   }
+  a{
+    color: rgba($white, .7);
+  }
   input, button{
     margin-bottom: .5rem;
     &:focus{
