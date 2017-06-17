@@ -53,6 +53,7 @@ ready(function(){
   Barba.Pjax.getTransition = function() {
     return pageTransition;
   };
+  Barba.Prefetch.init();
 });
 
 
