@@ -37,7 +37,7 @@ ready(function(){
     reveal: function() {
       var _this = this;
       var newPage = this.newContainer;
-      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
       this.oldContainer.style.display = 'none';
       newPage.firstElementChild.animate(
         {
