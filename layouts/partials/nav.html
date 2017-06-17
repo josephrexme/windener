@@ -1,6 +1,6 @@
 <nav class="nav row">
   <div class="col col-10">
-    <a href="/"><img src="/logo.png" class="nav__logo" alt="Joseph Rex"></a>
+    <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.favicon | absURL }}" class="nav__logo" alt="{{ .Site.Params.name }}"></a>
   </div>
   <div class="col">
     <div class="nav__menu u-fr">

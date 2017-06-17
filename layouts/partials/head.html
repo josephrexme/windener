@@ -2,26 +2,90 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
   {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-  {{ if not .Site.Params.themeBuilder }}
-    {{ .Hugo.Generator }}
+  {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ .Hugo.Generator }}
+  <meta property="site_name" content="{{ .Site.DisqusShortname }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .URL | absURL }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:image" content="{{ .Site.Params.favicon | absURL }}">
+  {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+  <meta name="twitter:url" content="{{ .URL | absURL }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ .Site.DisqusShortname }}">
+  <meta name="twitter:creator" content="@{{ .Site.DisqusShortname }}">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta name="twitter:img:src" content="{{ .Site.Params.favicon | absURL }}">
+  {{ if not .IsHome }}
+  <meta name="twitter:label1" content="Author">
+  <meta name="twitter:data1" content="{{ .Site.Params.name }}">
+  <meta name="twitter:label2" content="Published On">
+  <meta name="twitter:data2" content="{{ .Date.Format "January 2, 2006" }}">
   {{ end }}
-  <title>{{ .Title }}{{ if .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400">
+  <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
+  <link rel="canonical" href="{{ .URL | absURL }}">
+  {{ if .Site.Params.enableRSS }}
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
+  {{ end }}
   {{ if .Site.Params.favicon }}
   <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}">
   {{ else }}
   <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
   {{ end }}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400">
-  <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}">
-  <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
-  {{ if .Site.Params.enableRSS }}
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
-  {{ end }}
-
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/google_news.html" . }}
-  {{ template "_internal/schema.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
+  <link rel="pingback" href="https://webmention.io/josephrex.me/xmlrpc">
+  <link rel="webmention" href="https://webmention.io/josephrex.me/webmention">
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "{{ if .IsHome }}Website{{ else }}Article{{ end }}",
+    "description": "{{ .Site.Params.description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Params.name }} Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://res.cloudinary.com/strich/image/upload/v1493550549/jr-long-logo_fszgeu.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.name }}",
+      "url": "{{ .Site.Params.profile }}"
+    },
+    {{ if .Site.Social }}
+    "sameAs": [
+      {{ .Site.Social.twitter }},
+      {{ .Site.Social.linkedin }},
+      {{ .Site.Social.behance }},
+      {{ .Site.Social.codepen }},
+      {{ .Site.Social.github }}
+    ],
+    {{ end }}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .URL | absURL }}"
+    }
+    {{ if not .IsHome }}
+    ,"headline": "{{ .Title }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://dummyimage.com/800x500/011a38/ffffff.jpg&text={{ lower .Title }}",
+      "width": 800,
+      "height": 500
+    }
+    {{ end }}
+    {{ if not .IsHome }}
+    ,"datePublished": "{{ .Date.Format "January 2, 2006" }}",
+    "dateModified": "{{ .Date.Format "January 2, 2006" }}"
+    {{ end }}
+  }
+  </script>
 </head>
