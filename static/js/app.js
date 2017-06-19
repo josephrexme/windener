@@ -73,8 +73,7 @@ Barba.Dispatcher.on('transitionCompleted', function() {
   }
   // Progressive Reading Bar
   var bar = document.querySelector('.scroll-progress');
-  var rootElement = typeof InstallTrigger !== 'undefined' ? document.documentElement :
-  document.body;
+  var rootElement = document.documentElement;
   if(bar){
     document.addEventListener("scroll", function(e){
       var dw = document.body.scrollWidth,
