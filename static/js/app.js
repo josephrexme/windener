@@ -106,7 +106,7 @@ Barba.Dispatcher.on('transitionCompleted', function() {
 
 // Disqus Init
 function disqusComments() {
-  var disqus_shortname = 'josephrexme';
+  var disqus_shortname = document.querySelector('[data-disqus]').dataset.disqus;
   var crossOnTrigger = document.querySelector('.comments__trigger__plus');
   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
