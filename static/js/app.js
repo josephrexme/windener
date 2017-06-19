@@ -73,7 +73,6 @@ Barba.Dispatcher.on('transitionCompleted', function() {
   }
   // Progressive Reading Bar
   var bar = document.querySelector('.scroll-progress');
-  var rootElement = document.documentElement;
   if(bar){
     document.addEventListener("scroll", function(e){
       var dw = document.body.scrollWidth,
@@ -81,7 +80,7 @@ Barba.Dispatcher.on('transitionCompleted', function() {
           wh = window.innerHeight,
           disqusHeight = threadContainer ? threadContainer.clientHeight : 0, // For pages without disqus
           bottomContentHeight = threadContainer ? 700 : 370;
-          pos = (rootElement).scrollTop,
+          pos = window.scrollY,
           bw = ((pos / ((dh - (bottomContentHeight + disqusHeight)) - wh)) * 100);
       bar.style.width = bw+'%';
     });
