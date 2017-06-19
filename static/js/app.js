@@ -62,6 +62,8 @@ Barba.Dispatcher.on('transitionCompleted', function() {
   var threadContainer = document.getElementById('disqus_thread');
   // TypeSet MathJax
   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  // Rehighighlight Prism
+  Prism.highlightAll();
   // Share Post dropdown
   var shareBtn = document.getElementById('shareDropdown');
   if(shareBtn){
