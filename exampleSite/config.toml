@@ -10,24 +10,24 @@ googleAnalytics = ""
 disqusShortname = "spf13"
 
 [params]
-	name = "John Doe"
-	description = "Describe your website"
-	bio = "Blogger & Programmer"
+  name = "John Doe"
+  description = "Describe your website"
+  bio = "Blogger & Programmer"
   email = "johndoe@provider.com"
   profile = "https://about.me/example" # Link to your profile here
-	enableRSS = true
+  enableRSS = true
   favicon = "" # A favicon file located in your static directory
   logo = "" # Logo located in static directory
 
 # Add additional social link entries underneath
 [social]
-    facebook = "https://www.facebook.com/"
-    twitter  = "https://www.twitter.com/"
-    github   = "https://www.github.com/"
-    dribbble  = "https://www.dribbble.com/"
-    codepen  = "https://www.codepen.io/"
-    behance  = "https://www.behance.net/"
-    stackoverflow  = "https://www.stackoverflow.com/"
-    pinterest  = "https://www.pinterest.com/"
-    instagram  = "https://www.instagram.com/"
-    linkedin  = "https://www.linkedin.com/"
+  facebook = "https://www.facebook.com/"
+  twitter  = "https://www.twitter.com/"
+  github   = "https://www.github.com/"
+  dribbble  = "https://www.dribbble.com/"
+  codepen  = "https://www.codepen.io/"
+  behance  = "https://www.behance.net/"
+  stackoverflow  = "https://www.stackoverflow.com/"
+  pinterest  = "https://www.pinterest.com/"
+  instagram  = "https://www.instagram.com/"
+  linkedin  = "https://www.linkedin.com/"

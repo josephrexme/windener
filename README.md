@@ -14,7 +14,12 @@ Windener is a simple theme for blogging with a gradiented home page, smooth tran
 - Social icons
 
 
+Homepage
+
 ![Screenshot](https://cdn.rawgit.com/josephrexme/windener/60018193/images/screenshot.png)
+
+
+Single post page
 
 ![Blog screenshot](https://cdn.rawgit.com/josephrexme/windener/3d1a6529/images/screenshot-single.png)
 
@@ -33,7 +38,7 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 ### Configuration
 
-The [`example config`](https://github.com/josephrexme/windener/blog/master/exampleSite.config.toml) can be copied to the root of your hugo folder directory. Customize the configurations as you wish.
+The [example config](https://github.com/josephrexme/windener/blob/master/exampleSite/config.toml) can be copied to the root of your hugo folder directory. Customize the configurations as you wish.
 
 **Logo** and **Favicon** could be changed from the config file. You could also add username for **disqus**, **google analytics** code. Feel free to [file an issue](https://github.com/josephrexme/windener/issues).
 
