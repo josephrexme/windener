@@ -38,8 +38,10 @@
   {{ else }}
   <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
   {{ end }}
+  {{ if .Site.Params.themeBuilder }}
   <link rel="pingback" href="https://webmention.io/josephrex.me/xmlrpc">
   <link rel="webmention" href="https://webmention.io/josephrex.me/webmention">
+  {{ end }}
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
