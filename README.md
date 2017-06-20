@@ -42,11 +42,14 @@ The [example config](https://github.com/josephrexme/windener/blob/master/example
 
 **Logo** and **Favicon** could be changed from the config file. You could also add username for **disqus**, **google analytics** code. Feel free to [file an issue](https://github.com/josephrexme/windener/issues).
 
+#### Adding pages to the navigation
+Create a markdown file in the content directory (e.g `about.md`) and add a `_index.md` and you can create as many static pages as you want that way but note that the theme doesn't visually organize the pages into a hamburger when you have too many.
+
 ## License
 
 This theme is released under the MIT license. For more information read the [license](https://github.com/josephrexme/windener/blob/master/LICENSE.md).
 
 ## Todo
 
-- Add a way to add pages for nav from config
+- Bundle assets with gulp
 

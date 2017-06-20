@@ -4,8 +4,9 @@
   </div>
   <div class="col">
     <div class="nav__menu u-fr">
-      <a href="/about-me" class="u-inherit-color">About Me</a>
-      <a href="/reading-list" class="u-inherit-color">Reading List</a>
+      {{ range where .Site.RegularPages "Type" "page" }}
+        <a href="{{ .URL }}" class="u-inherit-color">{{ .LinkTitle }}</a>
+      {{ end }}
     </div>
   </div>
 </nav>
