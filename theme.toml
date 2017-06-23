@@ -4,7 +4,7 @@ licenselink = "https://github.com/josephrexme/windener/blob/master/LICENSE.md"
 description = "A personalized theme for blogging"
 homepage = "https://github.com/josephrexme/windener"
 tags = ["blog", "animation", "prism syntax highlighting"]
-features = ["syntax highlighting", "blog", "pagination", "sharing options", "Reading Time", "Read progress"]
+features = ["syntax highlighting", "blog", "pagination", "sharing options", "Reading Time", "Read progress", "word count"]
 min_version = 0.20
 
 [author]

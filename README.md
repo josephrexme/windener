@@ -12,6 +12,7 @@ Windener is a simple theme for blogging with a gradiented home page, smooth tran
 - Sharing options
 - JSONLD Schema for page SEO
 - Social icons
+- Display word count only on local version of blog
 
 
 Homepage
