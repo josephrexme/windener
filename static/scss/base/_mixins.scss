@@ -1,34 +1,34 @@
 // Mixins
 
 @mixin three-d($shadowcolor){
-	position: relative;
-	box-shadow: 1px 1px $shadowcolor, 2px 2px $shadowcolor, 3px 3px $shadowcolor;
-	transition: all 0.1s ease-in;
-	&:active{
-		box-shadow: none;
-		top: 3px;
-		left: 3px;
-	}
+  position: relative;
+  box-shadow: 1px 1px $shadowcolor, 2px 2px $shadowcolor, 3px 3px $shadowcolor;
+  transition: all 0.1s ease-in;
+  &:active{
+    box-shadow: none;
+    top: 3px;
+    left: 3px;
+  }
 }
 
 @mixin font-face($family, $path, $svg, $weight: normal, $style: normal){
-	@font-face{
-		font-family: $family;
-		src: url('#{$path}.eot');
-		src: url('#{$path}.eot?#iefix') format('embedded-opentype'),
-			 url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'),
-			 url('#{$path}.svg##{$svg}') format('svg');
-		font-weight: $weight;
-		font-style: $style;
-	}
+  @font-face{
+    font-family: $family;
+    src: url('#{$path}.eot');
+    src: url('#{$path}.eot?#iefix') format('embedded-opentype'),
+       url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'),
+       url('#{$path}.svg##{$svg}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
 }
 
 // Makes Ellipsis on Single Line
 @mixin ellipsis-line($width){
-	width: $width;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
+  width: $width;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 // Links on the prompt component
@@ -40,8 +40,8 @@
 
 // GrayScale Filter
 @mixin grayscale($level){
-	-webkit-filter: grayscale($level);
-	filter: grayscale($level);
+  -webkit-filter: grayscale($level);
+  filter: grayscale($level);
 }
 
 @mixin clearfixable(){
@@ -55,37 +55,37 @@
 }
 
 @mixin socle(){
-	position: relative;
-	z-index: 2;
-	&:after{
-		content: "";
-		z-index: -1;
-		position: absolute;
-		border-radius: 6px;
-		box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.7);
-		top: -6px;
-		bottom: -6px;
-		right: -6px;
-		left: -6px;
-		background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0));
-	}
+  position: relative;
+  z-index: 2;
+  &:after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.7);
+    top: -6px;
+    bottom: -6px;
+    right: -6px;
+    left: -6px;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0));
+  }
 }
 // Gradients
 @mixin gradient-dark-linear{
-	background-image: -webkit-linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
-	background-image: -o-linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
-	background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
+  background-image: -webkit-linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
+  background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));
 }
 @mixin gradient-light-linear{
-	background-image: -webkit-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
-	background-image: -o-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
-	background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: -webkit-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
 }
 @mixin gradient-dark-radial{
-	background-image: radial-gradient(center 0, circle farthest-corner, rgba(0,0,0,0.15), rgba(0,0,0,0));
+  background-image: radial-gradient(center 0, circle farthest-corner, rgba(0,0,0,0.15), rgba(0,0,0,0));
 }
 @mixin gradient-light-radial{
-	background-image: radial-gradient(center 0, circle farthest-corner, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  background-image: radial-gradient(center 0, circle farthest-corner, rgba(255,255,255,0.4), rgba(255,255,255,0));
 }
 @mixin print($map) {
   @each $property, $value in $map {
@@ -93,10 +93,10 @@
   }
 }
 @mixin prefix($property, $value, $prefixes) {
-	@each $prefix in $prefixes {
-		#{$prefix}-#{$property}:$value;
-	}
-	#{$property}:$value;
+  @each $prefix in $prefixes {
+    #{$prefix}-#{$property}:$value;
+  }
+  #{$property}:$value;
 }
 @mixin stitches($color){
    padding: 20px;
@@ -125,9 +125,9 @@
   height: $height;
 }
 @mixin breakpoint($value){
-	@media only screen and (min-width: $value){
-		@content;
-	}
+  @media only screen and (min-width: $value){
+    @content;
+  }
 }
 // Magic parallax mixins
 @mixin parallax-init($perspective: null, $element: null, $parallax-ios: null) {
@@ -375,12 +375,6 @@
         width: 100%;
       }
     }
-  }
-}
-
-@mixin button-hover($bgcolor){
-  &:hover{
-    background: darken($bgcolor, 5%);
   }
 }
 

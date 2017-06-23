@@ -3,7 +3,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
+  {{ if .IsHome }}
   {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ else }}
+  <meta name="description" content="{{ .Summary }}">
+  {{ end }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
   {{ .Hugo.Generator }}
   <meta property="site_name" content="{{ .Site.DisqusShortname }}">
@@ -11,7 +15,11 @@
   <meta property="og:url" content="{{ .URL | absURL }}">
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta property="og:image" content="{{ .Site.Params.favicon | absURL }}">
+  {{ if .IsHome }}
   {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+  {{ else }}
+  <meta property="og:description" content="{{ .Summary }}">
+  {{ end }}
   <meta name="twitter:url" content="{{ .URL | absURL }}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@{{ .Site.DisqusShortname }}">
@@ -27,7 +35,6 @@
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   <link rel="dns-prefetch" href="//stats.g.doubleclick.net">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400">
-  <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}">
   <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
   <link rel="canonical" href="{{ .URL | absURL }}">
   {{ if .Site.Params.enableRSS }}

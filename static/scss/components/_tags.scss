@@ -11,15 +11,5 @@
       text-decoration: none;
       background: darken($white, 10%);
     }
-    &::after{
-      content: '';
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      right: -5px;
-      width: 5px;
-      height: 15px;
-      background: $white;
-    }
   }
 }
