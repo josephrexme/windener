@@ -9,6 +9,7 @@
         <time class="post__date">{{ .Date.Format "January 2, 2006" }}</time>
         {{ $rt := .ReadingTime }}
         &middot; <span>{{ $rt }} minute{{if gt $rt 1}}s{{end}} read</span>
+        <span class="wordcount" style="color: #aaa">&middot; {{ .WordCount }} words</span>
       </header>
       <main>
         <article class="post__article">
