@@ -62,7 +62,8 @@ Barba.Dispatcher.on('transitionCompleted', function() {
   var threadContainer = document.getElementById('disqus_thread');
   // Show word count on local deploys only
   var wordcount = document.querySelector('.wordcount');
-  wordcount.style.display = location.hostname === 'localhost' ? 'inline' : 'none';
+  if(wordcount)
+    wordcount.style.display = location.hostname === 'localhost' ? 'inline' : 'none';
   // TypeSet MathJax
   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
   // Rehighighlight Prism
