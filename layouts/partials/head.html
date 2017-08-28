@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="{{ "css/app.css" | absURL }}">
   <link rel="canonical" href="{{ .URL | absURL }}">
   {{ if .Site.Params.enableRSS }}
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/feed.xml" />
   {{ end }}
   {{ if .Site.Params.favicon }}
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
