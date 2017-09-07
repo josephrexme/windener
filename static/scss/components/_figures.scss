@@ -55,11 +55,8 @@ figure{
 .figure--fullwidth{
   margin-bottom: 20px;
   > .image, > .video{
-    position: relative;
-    left: calc(50% - 50vw);
+    margin: 20px calc(50% - 50vw);
     width: 100vw;
     max-width: 100vw;
-    margin-top: 20px;
-    margin-right: -400px;
   }
 }
